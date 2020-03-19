@@ -1,10 +1,11 @@
 //src/controler/userController.js
+
 const mongoose = require('mongoose');
 const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-let MONGO_CONNECTION_URL = process.env.MONGO_CONNECTION_URL;
+let MONGO_CONNECTION_URL = process.env.MONGO_HEROKU_CON_URL;
 
 module.exports = {
     add,
