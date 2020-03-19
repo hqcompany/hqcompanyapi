@@ -1,27 +1,26 @@
 {
-    "name": "hqcogroup-admin",
-    "version": "0.1.0",
-    "description": "NodeJS, SQLite API for User Management, Authentication and Registration",
-    "license": "ISC",
+    "name": "authenticate-nodejs-es6-api",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
     "scripts": {
-        "start": "node server.js",
-        "start:dev": "nodemon server.js"
+        "start": "cross-env NODE_ENV=production node index.js",
+        "dev": "cross-env NODE_ENV=development nodemon index.js"
     },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
     "dependencies": {
-        "bcryptjs": "^2.4.3",
-        "bluebird": "^3.7.2",
+        "bcrypt": "^4.0.1",
         "body-parser": "^1.19.0",
-        "cors": "^2.8.4",
-        "ejs": "^3.0.1",
+        "dotenv": "^8.2.0",
         "express": "^4.17.1",
-        "express-jwt": "^5.3.1",
         "jsonwebtoken": "^8.5.1",
-        "mongodb": "^3.2.7",
-        "mongoose": "^5.6.9",
-        "rootpath": "^0.1.2",
-        "sqlite3": "^4.1.1"
+        "mongoose": "^5.9.5"
     },
     "devDependencies": {
-        "nodemon": "^1.19.1"
+        "cross-env": "^7.0.2",
+        "morgan": "^1.9.1",
+        "nodemon": "^2.0.2"
     }
 }
