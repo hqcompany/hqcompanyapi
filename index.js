@@ -30,7 +30,7 @@ app.use(cors());
 
 app.use('/api/v1', routes(router));
 
-const PORT = process.env.PORT || stage.port || 3000;
+const PORT = stage ? stage.port : process.env.PORT || 3000;
 
 app.listen(PORT, () => {
     console.log(`Server now listening at localhost:${PORT}`);
