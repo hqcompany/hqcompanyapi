@@ -3,8 +3,6 @@ module.exports = {
         port: process.env.PORT || 3000,
         saltingRounds: 10
     },
-    product: {
-        port: process.env.PORT || 3000,
-        saltingRounds: 21
-    }
+    port: process.env.PORT || 3000,
+    saltingRounds: 21
 };

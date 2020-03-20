@@ -5,7 +5,9 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-let MONGO_CONNECTION_URL = process.env.MONGO_HEROKU_CON_URL;
+let MONGO_CONNECTION_URL =
+    process.env.HEROKU_MONGO_URI || process.env.MONGO_URI;
+// let MONGO_CONNECTION_URL = process.env.LOCAL_MONGO_URI;
 
 module.exports = {
     add,

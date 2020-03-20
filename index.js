@@ -10,6 +10,8 @@ const router = express.Router();
 const enviroment = process.env.NODE_ENV;
 const stage = require('./config')[enviroment];
 
+const cors = require('cors');
+
 const routes = require('./src/routes/indexRoute.js');
 
 app.use(bodyParser.json());
@@ -19,6 +21,8 @@ if (enviroment !== 'production') {
     app.use(logger('dev'));
 }
 
+app.use(cors());
+
 // app.use('/api/v1', (req, res, next) => {
 //     res.send('Auth nodejs api v1');
 //     next();
@@ -26,8 +30,10 @@ if (enviroment !== 'production') {
 
 app.use('/api/v1', routes(router));
 
-app.listen(`${stage.port}`, () => {
-    console.log(`Server now listening at localhost:${stage.port}`);
+const PORT = process.env.PORT || stage.port || 3000;
+
+app.listen(PORT, () => {
+    console.log(`Server now listening at localhost:${PORT}`);
 });
 
 module.exports = app;
