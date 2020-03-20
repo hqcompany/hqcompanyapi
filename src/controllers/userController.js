@@ -5,8 +5,14 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-let MONGO_CONNECTION_URL =
-    process.env.HEROKU_MONGO_URI || process.env.MONGO_URI;
+const enviroment = process.env.NODE_ENV;
+
+let MONGO_CONNECTION_URL = process.env.HEROKU_MONGO_URI;
+//condition for local and deploy to host
+if (enviroment === 'development') {
+    MONGO_CONNECTION_URL = process.env.LOCAL_MONGO_URL;
+}
+console.log(MONGO_CONNECTION_URL);
 // let MONGO_CONNECTION_URL = process.env.LOCAL_MONGO_URI;
 
 module.exports = {
