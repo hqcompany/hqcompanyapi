@@ -23,12 +23,12 @@ if (enviroment !== 'production') {
 
 app.use(cors());
 
-// app.use('/api/v1', (req, res, next) => {
-//     res.send('Auth nodejs api v1');
-//     next();
-// });
-
 app.use('/api/v1', routes(router));
+
+app.use('/', (req, res, next) => {
+    res.send('Auth nodejs api v1');
+    next();
+});
 
 const PORT = stage ? stage.port : process.env.PORT || 3000;
 
