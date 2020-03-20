@@ -5,7 +5,7 @@ const User = require('../models/user');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 
-let MONGO_CONNECTION_URL = process.env.MONGO_URL;
+let MONGO_CONNECTION_URL = process.env.MONGODB_URL;
 console.log(MONGO_CONNECTION_URL);
 
 module.exports = {
